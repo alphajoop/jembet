@@ -1,0 +1,45 @@
+#feature {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 40px auto;
+  max-width: 1200px;
+  background-color: #fff;
+}
+
+#feature .jmbt-feature {
+  text-align: center;
+  margin: 20px;
+  flex-basis: calc(33.33% - 40px);
+}
+
+#feature .jmbt-feature h2 {
+  font-size: 22px;
+  margin-top: 15px;
+  color: #333;
+}
+
+#feature .jmbt-feature p {
+  font-size: 14px;
+  margin-top: 10px;
+  color: #666;
+}
+
+/* Styles pour les icônes */
+#feature .jmbt-feature i {
+  font-size: 35px;
+  color: #75c32c;
+  margin-bottom: 15px;
+}
+
+/* Media query pour la responsivité des caractéristiques clés */
+@media (max-width: 768px) {
+  #feature {
+    flex-direction: column;
+  }
+
+  #feature .jmbt-feature {
+    flex-basis: 100%;
+  }
+}

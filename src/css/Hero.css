@@ -1,4 +1,99 @@
 #hero {
-    position: relative;
-    margin-top: 80px;
+  position: relative;
+  margin-top: 80px;
+}
+
+#hero .jmbt-home-cover {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+}
+
+#hero .jmbt-home-cover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+#hero .jmbt-home-cover img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  min-height: 100%;
+}
+
+#hero .jmbt-cover-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  z-index: 1;
+}
+
+#hero .jmbt-home-cover.jmbt-cover-text h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+#hero .jmbt-home-cover.jmbt-cover-text p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+#hero .jmbt-btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #ff5733;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 28px;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+#hero .jmbt-btn:hover {
+  background-color: #75c32c;
+  color: #fff;
+}
+
+#hero .jmbt-btn:focus {
+  background-color: #ff5733;
+}
+
+#hero .jmbt-btn:active {
+  background-color: #75c32c;
+}
+
+/* Media query pour la responsivité */
+@media (max-width: 768px) {
+  #hero .jmbt-cover-text {
+    padding: 0 20px;
+  }
+
+  #hero .jmbt-cover-text h1 {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+    white-space: nowrap;
+  }
+
+  #hero .jmbt-cover-text p {
+    font-size: 0.9em;
+    margin-bottom: 20px;
+  }
+
+  #hero .jmbt-btn {
+    margin-top: 10px;
+    white-space: nowrap;
+  }
 }
