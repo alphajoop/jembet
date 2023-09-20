@@ -1,0 +1,208 @@
+.jmbt-header {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+nav {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 0 35px;
+  height: 80px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f5f5f5;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+/* Styles pour la barre de navigation au défilement vers le bas */
+nav.scrolled {
+  background-color: rgba(245, 245, 245, 0.9);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles pour les liens de la barre de navigation fixe */
+nav a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Styles pour les liens de la barre de navigation fixe au survol */
+nav a:hover {
+  color: #ff5733;
+}
+
+nav a.active {
+  color: #ff5733;
+}
+
+/* Styles pour le logo */
+.jmbt-banner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.jmbt-banner img {
+  width: 60px;
+  height: auto;
+}
+
+.jmbt-title {
+  margin-left: 10px;
+  font-size: 24px;
+  color: #333;
+  text-decoration: none;
+}
+
+/* Styles pour le bouton de menu */
+.jmbt-menu-toggle {
+  display: none;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  transform: rotate(0deg);
+}
+
+.jmbt-menu-toggle span {
+  background-color: #ff5733;
+  width: 100%;
+  height: 3px;
+  border-radius: 4px / 4;
+  display: block;
+  position: absolute;
+  left: 0;
+  content: '';
+  transition: .3s ease-in-out;
+}
+
+.jmbt-menu-toggle span:nth-child(1) {
+  top: 4px;
+  transform-origin: left center;
+}
+
+.jmbt-menu-toggle span:nth-child(2) {
+  top: 12px;
+  transform-origin: left center;
+}
+
+.jmbt-menu-toggle span:nth-child(3) {
+  top: 20px;
+  transform-origin: left center;
+}
+
+.jmbt-menu-toggle.open span:nth-child(1) {
+  transform: rotate(45deg);
+  top: -1px;
+  left: 4px;
+}
+
+.jmbt-menu-toggle.open span:nth-child(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+.jmbt-menu-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 21px;
+  left: 4px;
+}
+
+/* Styles pour le menu principal */
+.jmbt-menu-items {
+  display: flex;
+}
+
+.jmbt-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.jmbt-menu li {
+  margin-right: 20px;
+  position: relative;
+}
+
+.jmbt-items-group {
+  display: flex;
+}
+
+/* Styles pour le badge de quantité du panier */
+.jmbt-cart {
+  position: relative;
+  color: #ff5733;
+}
+
+.jmbt-cart .jmt-bag-shopping {
+  margin-left: 10px;
+}
+
+.jmbt-cart .jmbt-cart-quantity {
+  position: absolute;
+  background-color: #ff5733;
+  width: 25px;
+  height: 25px;
+  color: #333;
+  border-radius: 50%;
+  padding: 2px;
+  text-align: center;
+  font-size: 14px;
+  bottom: 7px;
+}
+
+/* Styles pour le menu mobile */
+@media screen and (max-width: 768px) {
+  nav {
+    padding: 0 10px;
+  }
+
+  .jmbt-banner img {
+    width: 50px;
+    height: auto;
+  }
+
+  .jmbt-menu-toggle {
+    display: block;
+    z-index: 3;
+    order: 1;
+  }
+
+  .jmbt-menu-items {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: left 0.3s ease, opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+
+  .jmbt-menu-items.show {
+    left: 0;
+    opacity: 1;
+  }
+
+  .jmbt-menu {
+    flex-direction: column;
+    padding: 10px 0;
+  }
+
+  .jmbt-menu li {
+    margin: 10px 0;
+  }
+
+  .jmbt-cart {
+    z-index: 0;
+  }
+}
